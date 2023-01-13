@@ -1,0 +1,18 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: 'creating lambda function for s3 bucket code'
+
+# lambda function 1
+
+Resources:
+  Lambda1: 
+    Type: "AWS::Lambda::Function"
+    Properties: 
+        Code: 
+            ZipFile: >
+                def lambda_handler(event, context):
+                return 'hello from aniket'
+        Description: test with cloudformation
+        FunctionName: HelloWorld
+        Handler: index.lambda_handler
+        Role: arn:aws:iam::492882141504:role/lamdaservice
+        Runtime: python3.8       
